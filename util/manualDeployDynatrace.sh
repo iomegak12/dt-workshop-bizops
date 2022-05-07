@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PUBLIC_HN=$1
 
 export API_TOKEN=$(cat creds.json | jq -r '.dynatraceApiToken')
 export PAAS_TOKEN=$(cat creds.json | jq -r '.dynatracePaaSToken')
@@ -7,6 +8,7 @@ export TENANTID=$(cat creds.json | jq -r '.dynatraceTenantID')
 export ENVIRONMENTID=$(cat creds.json | jq -r '.dynatraceEnvironmentID')
 
 export TENANTID=$TENANTID
+export PUBLIC_HOSTNAME=$PUBLIC_HN
 
 echo "Deploying Dynatrace Oneagent using the following credentials: "
 echo "API_TOKEN = $API_TOKEN"
